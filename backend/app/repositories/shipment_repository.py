@@ -30,12 +30,14 @@ class ShipmentRepository(BaseRepository[Shipment]):
 
     async def get_by_company(
         self,
-        company_id: int,
+        company_id: Optional[int],
         skip: int = 0,
         limit: int = 20,
         status: Optional[ShipmentStatus] = None,
     ) -> tuple[List[Shipment], int]:
-        filters = [Shipment.company_id == company_id]
+        filters = []
+        if company_id is not None:
+            filters.append(Shipment.company_id == company_id)
         if status:
             filters.append(Shipment.status == status)
 
