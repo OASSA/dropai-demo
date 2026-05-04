@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans antialiased;
+  }
+
+  /* RTL-aware scrollbar */
+  :root {
+    --brand: #cc3318;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-600 text-white font-semibold
+           hover:bg-brand-700 active:bg-brand-800
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2
+           transition-all duration-150 shadow-sm
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-200 text-gray-700
+           bg-white font-semibold hover:bg-gray-50 hover:border-gray-300
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2
+           transition-all duration-150 shadow-sm;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-6;
+  }
+  .input {
+    @apply block w-full rounded-xl border border-gray-200 px-3.5 py-2.5 text-sm
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+           placeholder-gray-400 transition-shadow;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .table-header {
+    @apply px-4 py-3 text-start text-xs font-semibold text-gray-500 uppercase tracking-wide;
+  }
+  .table-cell {
+    @apply px-4 py-3 text-sm;
+  }
+}
+
+/* Smooth direction transitions */
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Arabic typography tweaks */
+[lang="ar"] {
+  letter-spacing: 0;
+  word-spacing: 0.05em;
+}

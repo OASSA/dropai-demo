@@ -1,0 +1,44 @@
+# DropAI External API Configuration
+# All secrets should be set via .env — never hardcode them here.
+
+google_maps:
+  enabled: true
+  distance_matrix_url: "https://maps.googleapis.com/maps/api/distancematrix/json"
+  geocoding_url: "https://maps.googleapis.com/maps/api/geocode/json"
+  directions_url: "https://maps.googleapis.com/maps/api/directions/json"
+  # Key loaded from env: GOOGLE_MAPS_API_KEY
+
+whatsapp:
+  provider: "twilio"
+  enabled: false
+  from_number: "whatsapp:+14155238886"
+  # Credentials loaded from env: TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN
+
+email:
+  provider: "sendgrid"
+  enabled: false
+  from_address: "noreply@dropai.io"
+  templates:
+    shipment_created: "d-placeholder-template-id-001"
+    shipment_assigned: "d-placeholder-template-id-002"
+    shipment_delivered: "d-placeholder-template-id-003"
+    delay_alert: "d-placeholder-template-id-004"
+  # Key loaded from env: SENDGRID_API_KEY
+
+logistics_providers:
+  aramex:
+    enabled: false
+    base_url: "https://ws.aramex.net/ShippingAPI.V2/"
+    account_country_code: "SA"
+  dhl:
+    enabled: false
+    base_url: "https://api-sandbox.dhl.com/"
+  fedex:
+    enabled: false
+    base_url: "https://apis-sandbox.fedex.com/"
+
+ai_engine:
+  eta_model: "heuristic"      # Options: heuristic | sklearn | pytorch
+  route_optimizer: "nearest_neighbor"  # Options: nearest_neighbor | ortools | google_routes
+  scoring_model: "heuristic"
+  retrain_interval_hours: 24
