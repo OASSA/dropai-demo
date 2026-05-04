@@ -27,7 +27,21 @@
       "Bash(git init *)",
       "Bash(git remote *)",
       "Bash(git config *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(grep \"\\\\.env$\")",
+      "Bash(git commit -m ' *)",
+      "Bash(gh repo *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(vercel login *)",
+      "Bash(jobs -l)",
+      "Bash(~/.local/bin/vercel whoami *)",
+      "Bash(git commit *)",
+      "Bash(vercel whoami *)",
+      "Bash(vercel --prod --yes)",
+      "Bash(curl -s --max-time 5 \"https://dropai-api.onrender.com/health\")",
+      "Bash(curl -s --max-time 5 \"https://dropai-api-demo.onrender.com/health\")",
+      "Bash(vercel env *)"
     ]
   }
 }

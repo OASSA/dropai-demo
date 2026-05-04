@@ -25,7 +25,7 @@ services:
       - key: ENVIRONMENT
         value: production
       - key: ALLOWED_ORIGINS
-        value: '["https://dropai-demo.vercel.app","http://localhost:3000","http://localhost:5173"]'
+        value: '["https://frontend-three-dusky-64.vercel.app","https://dropai-demo.vercel.app","http://localhost:3000","http://localhost:5173"]'
 
 databases:
   - name: dropai-db
